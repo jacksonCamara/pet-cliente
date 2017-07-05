@@ -1,1 +1,131 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.pointer:hover{
+    cursor:pointer;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+
+
+.tr-hover:hover{
+    background-color: #0275d8;
+    color: #fff;
+}
+
+.margem-menu{
+    margin-top: 3em
+}
+.margem-formulario{
+    margin-top: 2em
+}
+
+
+.tr-hover:hover  {
+    background-color: #0275d8;
+    color: #fff;
+}
+
+.input-cem{
+  width: 100%;
+
+}
+
+.coluna-100{
+    width: 100%;
+}
+
+.coluna-90{
+    width: 90%;
+}
+
+.coluna-80{
+    width: 80%;
+}
+
+.coluna-70{
+    width: 70%;
+}
+
+.coluna-65{
+    width: 650%;
+}
+
+.coluna-60{
+    width: 60%;
+}
+
+.coluna-50{
+    width: 50%;
+}
+
+.coluna-45{
+    width: 45%;
+}
+
+.coluna-40{
+    width: 40%;
+}
+
+.coluna-35{
+    width: 35%;
+}
+
+.coluna-33{
+    width: 33%;
+}
+.coluna-34{
+    width: 34%;
+}
+
+.coluna-30{
+    width: 30%;
+    
+}
+
+.coluna-25{
+    width: 25%;
+}
+
+
+.coluna-20{
+    width: 20%;
+}
+
+.coluna-15{
+    width: 15%;
+}
+
+.coluna-10{
+    width: 10%;
+}
+
+.teste{
+      background-color: hotpink;
+}
+
+.testa{
+      background-color: yellow;
+}
+
+.testi{
+      background-color: blue;
+}
+
+.testo{
+      background-color: green;
+}
+
+.azul-daiana{
+    background-color: #90A4AE;
+}
+
+
+/*
+
+*/
+
+
+ 

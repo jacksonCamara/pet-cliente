@@ -1,0 +1,21 @@
+
+//exemplo de json composto
+  
+  {
+    "id": 1,
+    "quantidade": 2,
+    "servico": {
+      "id": 3,
+      "descricao": "string",
+      "valor": 12,
+      "categoriaRaca": "string",
+      "tamanho": "string"
+    }
+  }]
+
+                  <tr *ngFor="let pacote of pacotes" class="tr-hover pointer ">
+                  <td scope="row"><input [(ngModel)]="pacote.quantidade" name="pacote-quantidade" class="coluna-100" type="text" /></td>
+                  <td >{{pacote.servico.id}}</td>
+                  <td>{{pacote.servico.descricao}}</td>
+                  <td>{{pacote.servico.valor}}</td>
+                </tr>

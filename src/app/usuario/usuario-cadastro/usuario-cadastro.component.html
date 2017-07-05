@@ -1,0 +1,122 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 margem-menu">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb azul-daiana text-white">
+            <h2 class="h3">Usuário</h2>
+          </div>
+        </div>
+      </div>
+      <form>
+
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="form-group">
+              <label for="usuario">Nome</label>
+              <input class="form-control" aria-describedby="usuario" type="text" name="usuario" value="" placeholder="Nome do Funcionário">
+            </div>
+          </div>
+      
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="cargo">Cargo</label>
+              <select class="form-control" id="cargo">
+                <option disabled="true">Escolha</option>
+                <option>Aux. Administrativo</option>
+                <option>Tosador</option>
+              </select>
+            </div>
+          </div>
+            
+   
+           </div>
+
+        <div class="row">
+
+       <div class="col-lg-6">
+            <div class="form-group">
+              <label for="login">Login</label>
+              <input class="form-control" aria-describedby="login" type="text" name="login" value="" placeholder="Nome para acessar o sistema">
+            </div>
+          </div>
+
+           <div class="col-lg-6">
+            <div class="form-group">
+              <label for="valor">Senha</label>
+              <input class="form-control" aria-describedby="senha" type="text" name="senha" value="" placeholder="Senha">
+            </div>
+          </div>
+       
+       
+
+
+
+
+   </div>
+
+          <!-- Botões-->
+          <div class="row">
+            <div class="col-lg-12 margem-formulario">
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-secondary " data-toggle="modal" data-target="#modalDesabilitar">Desabilitar</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalExcluir">Excluir</button>
+                <button type="submit" class="btn btn-secondary">Cancelar</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Modal Excluir -->
+          <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Excluir?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Só é possível excluir o usuário se não houver nenhum serviço cadastrado por ele</p>
+                  <p>Caso tenha utilize o botão desabilitar</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Desabilitar -->
+          <div class="modal fade" id="modalDesabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Desabilitar?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Não será mais possível acessar o sistema com este login.</p>
+                  <p>Os serviços executados com este login continuarão com o mesmo login.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      </form>
+
+      <!--Fechamento Geral-->
+      </div>
+    </div>
+  </div>

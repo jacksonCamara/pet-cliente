@@ -1,0 +1,299 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 margem-menu">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb azul-daiana text-white">
+            <h2 class="h3">Pet</h2>
+          </div>
+        </div>
+      </div>
+
+      <form action="">
+
+
+        <div class="row margem-formulario">
+          <div class="col-lg-12">
+
+            <div class="breadcrumb ">
+              <h2 class="h6">Cliente</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="pet-cliente" class=" control-label">Nome</label>
+              <div class="input-group">
+                <input [(ngModel)]="pet.cliente.nome" type="text" class="form-control" name="pet-cliente" id="pet-cliente" placeholder="Cliente"
+                  readonly />
+
+                <span class="input-group-btn">
+							    <button class="btn btn-secondary" type="button"  data-toggle="modal" data-target="#modalCliente"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row margem-formulario">
+          <div class="col-lg-12">
+            <div class="breadcrumb ">
+              <h2 class="h6">Dados do Pet</h2>
+            </div>
+          </div>
+        </div>
+
+        <!--Nome e Sexo -->
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input [(ngModel)]="pet.nome" name="pet-nome" type="text" class="form-control" id="pet-nome" aria-describedby="pet-nome"
+                placeholder="Nome Completo">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <legend class="col-form-legend">Sexo</legend>
+              <label class="custom-control custom-radio" for="pet.sexo-macho">
+                <input value="macho" [(ngModel)]="pet.sexo" name="pet.sexo-macho" id="pet.sexo-macho"  type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Macho</span>
+              </label>
+              <label class="custom-control custom-radio" for="pet.sexo-femea">
+                <input  value="femea"  [(ngModel)]="pet.sexo" name="pet.sexo-femea" id="pet.sexo-femea"  type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span  class="custom-control-description">Fêmea</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Nome e Sexo -->
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="pet-raca">Raça</label>
+              <select [(ngModel)]="pet.raca" name="pet.raca" class="form-control" id="pet-raca">
+                <option disabled selected value="0">Selecione</option>
+                <option *ngFor="let raca of racas" [ngValue]="raca.id">{{raca.descricao}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="telefone1">Data Nascimento</label>
+              <input [(ngModel)]="pet.dataNascimento" name="pet-data-nascimento" class="form-control" type="date" id="pet-data-nascimento">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="peso">Peso</label>
+              <input [(ngModel)]="pet.peso" name="pet-peso" class="form-control" type="number" id="pet-peso" placeholder="0">
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="porte">Porte</label>
+              <input [(ngModel)]="pet.porte" name="pet-porte" class="form-control" type="text" id="pet-porte" readonly>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="pelo">Pelo</label>
+              <select [(ngModel)]="pet.pelo" name="pet-pelo" class="form-control" id="pelo">
+                <option disabled selected value="0">Selecione</option>
+              <option *ngFor="let pelo of pelos" [ngValue]="pelo.id"> {{pelo.descricao}}</option>
+            </select>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- Botões-->
+        <div class="row">
+          <div class="col-lg-12 margem-formulario">
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Salvar</button>
+              <button type="submit" class="btn btn-secondary " data-toggle="modal" data-target="#modalDesabilitar">Desabilitar</button>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalExcluir">Excluir</button>
+              <button type="submit" class="btn btn-secondary">Cancelar</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- ################################# -->
+
+        <!-- Modal Cliente -->
+        <div class="modal fade  bd-example-modal-lg " id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+              <!--Cabeçalho-->
+              <div class="modal-header  margem-modal">
+                <h5 class="modal-title" id="exampleModalLabel">Cliente</h5>
+                <div class="form-group pull-right">
+                  <button type="submit" class="btn btn-secondary">Limpar</button>
+                  <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+              </div>
+
+              <div class="row margem-modal">
+                <div class="col-lg-12">
+
+                  <!--Tabela Pesquisa-->
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <table class="table table-striped table-hover table-responsive">
+                        <thead>
+                          <tr>
+                            <th class="coluna-20"><span class="pointer">Codigo <i class="fa fa-sort"></i></span> </th>
+                            <th class="coluna-55"><span class="pointer">Nome <i class="fa fa-sort"></i></span> </th>
+                            <th class="coluna-25"><span class="pointer">CPF <i class="fa fa-sort"></i></span> </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td scope="row"><input class="w-100" type="text" /></td>
+                            <td><input type="text " class="w-100" /></td>
+                            <td><input type="text " class="w-100" /></td>
+                          </tr>
+                          <tr *ngFor="let cliente of clientes" class="tr-hover pointer" (click)="clienteEscolhido(cliente.id, cliente.nome)" data-dismiss="modal">
+                            <td scope="row ">{{cliente.id}}</td>
+                            <td>{{cliente.nome}}</td>
+                            <td>{{cliente.cpf}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="row ">
+                    <div class="col-lg-6">
+                      <nav class="left" aria-label="...">
+                        <ul class="pagination">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="">1</a></li>
+                          <li class="page-item active">
+                            <a class="page-link" href="">2 <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group pull-right">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- ################################# -->
+
+
+
+        <!-- Modal Excluir-->
+        <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+              </div>
+              <div class="modal-body">
+                <p>Só é possível excluir o cliente se não houver finanças gerado para este cliente</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-danger">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Desabilitar -->
+        <div class="modal fade" id="modalDesabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Desabilitar?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                <p>Não será mais possível cadastrar novos pets com esta descrição de pelo.</p>
+                <p>Os pets já cadastrado permanecerão com a mesma descrição de pelo.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-danger">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+
+
+
+    </div>
+    <!--Coluna Principal-->
+  </div>
+  <!--Coluna Principal-->
+</div>
+<!--Coluna Principal-->

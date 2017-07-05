@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 margem-menu">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb azul-daiana text-white">
+            <h2 class="h3">Serviço</h2>
+          </div>
+        </div>
+      </div>
+      <form>
+
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="form-group">
+              <label for="descricao">Descrição</label>
+              <input class="form-control" aria-describedby="descricao" type="text" name="descricao" value="" placeholder="Nome do serviço">
+            </div>
+          </div>
+      
+
+            
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="valor">Valor</label>
+              <input class="form-control" aria-describedby="descricao" type="text" name="descricao" value="" placeholder="Somente números">
+            </div>
+          </div>
+           </div>
+
+        <div class="row">
+         <div class="col-lg-6">
+            <div class="form-group">
+              <label for="exampleSelect1">Tamanho</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>Escolha</option>
+                <option>Pequeno - 1 a 5</option>
+                <option>Medio - 6 a 9</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label for="exampleSelect1">Categoria Raça</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>Escolha</option>
+                <option>Tradicional</option>
+                <option>Especial</option>
+              </select>
+            </div>
+          </div>
+   </div>
+
+          <!-- Botões-->
+          <div class="row">
+            <div class="col-lg-12 margem-formulario">
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-secondary " data-toggle="modal" data-target="#modalDesabilitar">Desabilitar</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalExcluir">Excluir</button>
+                <button type="submit" class="btn btn-secondary">Cancelar</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Modal Excluir -->
+          <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Excluir?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Só é possível excluir a pelo se não houver nenhum pet com esta raça.</p>
+                  <p>Caso tenha utilize o botão desabilitar</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Desabilitar -->
+          <div class="modal fade" id="modalDesabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Desabilitar?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Não será mais possível cadastrar novos pets com esta descrição de pelo.</p>
+                  <p>Os pets já cadastrado permanecerão com a mesma descrição de pelo.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      </form>
+
+      <!--Fechamento Geral-->
+      </div>
+    </div>
+  </div>
