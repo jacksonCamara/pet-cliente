@@ -18,8 +18,8 @@ export class ClienteService {
     }
 
     add(cliente: Cliente): Observable<Response> {
-        if (cliente.id) {
-            return this.http.put(this.url + '/' + cliente.id, JSON.stringify(cliente), { headers: this.headers });
+        if (cliente._id) {
+            return this.http.put(this.url + '/' + cliente._id, JSON.stringify(cliente), { headers: this.headers });
         } else {
             console.log("entrou no add cliente service")
             console.log(cliente);
@@ -41,7 +41,7 @@ export class ClienteService {
     }
 
     update(cliente: Cliente): Observable<Response> {
-        return this.http.put(this.url + '/' + cliente.id, JSON.stringify(cliente), { headers: this.headers });
+        return this.http.put(this.url + '/' + cliente._id, JSON.stringify(cliente), { headers: this.headers });
     }
 }
 

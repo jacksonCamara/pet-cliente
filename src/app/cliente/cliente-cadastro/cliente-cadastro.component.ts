@@ -16,7 +16,7 @@ export class ClienteCadastroComponent implements OnInit {
   route: ActivatedRoute;
   router: Router;
   cliente: Cliente = new Cliente();
-
+  botaoSalvarEditar: string = "Salvar";
   contFone: number = 0;
   contEnd: number = 0;
 
@@ -28,6 +28,7 @@ export class ClienteCadastroComponent implements OnInit {
     this.route.params.subscribe(params => {
       let id = params['id'];
       if (id) {
+        this.botaoSalvarEditar = "Editar"
         this.clienteService.findOne(id).subscribe(cliente => {
           this.cliente = cliente;
           console.log(this.cliente)
@@ -41,23 +42,32 @@ export class ClienteCadastroComponent implements OnInit {
   }
 
   public salvar(): void {
-    this.clienteService
-      .add(this.cliente)
-      .subscribe(resposta => {
-        console.log(resposta)
-        this.cliente = new Cliente();
-      }, erro => console.log(erro));
+    if (this.botaoSalvarEditar == "Salvar") {
+      this.clienteService
+        .add(this.cliente)
+        .subscribe(resposta => {
+          console.log(resposta)
+          this.cliente = new Cliente();
+        }, erro => console.log(erro));
+    } else {
+      this.clienteService
+        .update(this.cliente)
+        .subscribe(resposta => {
+          console.log(resposta)
+          this.cliente = new Cliente();
+        }, erro => console.log(erro));
+    }
   }
 
   adicionarTelefone() {
     this.cliente.telefones.push({ numero: "", id: ++this.contFone })
     for (let t of this.cliente.telefones) {
-    //  console.log(t)
+      //  console.log(t)
     }
   }
 
   removerTelefone(index: number, last: number) {
-  //  console.log("removendo indice" + index);
+    //  console.log("removendo indice" + index);
     this.cliente.telefones.splice(index, 1)
   }
 
@@ -77,12 +87,12 @@ export class ClienteCadastroComponent implements OnInit {
       pontoReferencia: ""
     })
     for (let t of this.cliente.enderecos) {
-     // console.log(t)
+      // console.log(t)
     }
   }
 
   removerEndereco(index: number, last: number) {
- //   console.log("removendo indice" + index);
+    //   console.log("removendo indice" + index);
     this.cliente.enderecos.splice(index, 1)
   }
 }

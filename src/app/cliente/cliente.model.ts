@@ -2,7 +2,7 @@ import { Telefone } from './telefone.model';
 import { Endereco } from './endereco.model';
 
 export class Cliente {
-    id: string;
+    _id: string;
     nome: String = ""
     cpf: string = ""
     sexo: string = ""
