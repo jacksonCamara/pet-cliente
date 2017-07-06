@@ -1,5 +1,5 @@
 export class Endereco{
-    id: number;
+
     rua: string = ""
     numeroResidencia:string = ""
     bloco:string = ""

@@ -63,9 +63,9 @@
         <div *ngFor="let telefone of cliente.telefones; let isLast = last; let i = index;" class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="telefone.id" class=" control-label">Telefone {{i+1}}</label>
+              <label for="telefone.numero" class=" control-label">Telefone {{i+1}}</label>
               <div class="input-group">
-                <input type="text" class="form-control" [(ngModel)]="telefone.numero" name="{{telefone.cep}}-{{telefone.id}}" aria-describedby="telefone2"
+                <input type="text" class="form-control" [(ngModel)]="telefone.numero" name="{{telefone.numero}}-{{i}}" aria-describedby="telefone2"
                   value="{{telefone.numero}}" />
 
                 <span class="input-group-btn">
@@ -105,7 +105,7 @@
                 <div class="form-group">
                   <label for="cep" class=" control-label">CEP</label>
                   <div class="input-group">
-                    <input [(ngModel)]="endereco.cep" name="{{endereco.cep}}-{{endereco.id}}" type="text" class="form-control" name="cep" id="cep" placeholder="CEP"
+                    <input [(ngModel)]="endereco.cep" name="{{endereco.cep}}-{{i}}" type="text" class="form-control" name="cep" id="cep" placeholder="CEP"
                     />
                     <span class="input-group-btn">
 							    <button class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -116,7 +116,7 @@
               <div class="col-lg-8">
                 <div class="form-group">
                   <label for="rua">Rua</label>
-                  <input [(ngModel)]="endereco.rua" name="{{endereco.rua}}-{{endereco.id}}" type="text" class="form-control" id="rua" aria-describedby="rua"
+                  <input [(ngModel)]="endereco.rua" name="{{endereco.rua}}-{{i}}" type="text" class="form-control" id="rua" aria-describedby="rua"
                     placeholder="Rua">
                 </div>
               </div>
@@ -126,14 +126,14 @@
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="rua">Número</label>
-                  <input [(ngModel)]="endereco.numeroResidencia" name="{{endereco.numeroResidencia}}-{{endereco.id}}" type="text" class="form-control" id="rua"
+                  <input [(ngModel)]="endereco.numeroResidencia" name="{{endereco.numeroResidencia}}-{{i}}" type="text" class="form-control" id="rua"
                     aria-describedby="rua" placeholder="Numero">
                 </div>
               </div>
               <div class="col-lg-8">
                 <div class="form-group">
                   <label for="edificio">Edifício</label>
-                  <input [(ngModel)]="endereco.edificio" name="{{endereco.edificio}}-{{endereco.id}}" type="text" class="form-control" id="rua"
+                  <input [(ngModel)]="endereco.edificio" name="{{endereco.edificio}}-{{i}}" type="text" class="form-control" id="rua"
                     aria-describedby="rua" placeholder="Edificio">
                 </div>
               </div>
@@ -143,21 +143,21 @@
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="rua">Bloco</label>
-                  <input [(ngModel)]="endereco.bloco" name="{{endereco.bloco}}-{{endereco.id}}" type="text" class="form-control" id="rua" aria-describedby="rua"
+                  <input [(ngModel)]="endereco.bloco" name="{{endereco.bloco}}-{{i}}" type="text" class="form-control" id="rua" aria-describedby="rua"
                     placeholder="Bloco">
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="edificio">Número Apartamento</label>
-                  <input [(ngModel)]="endereco.apartamento" name="{{endereco.apartamento}}-{{endereco.id}}" type="text" class="form-control"
+                  <input [(ngModel)]="endereco.apartamento" name="{{endereco.apartamento}}-{{i}}" type="text" class="form-control"
                     id="rua" aria-describedby="Número Apartamento" placeholder="Número do Apartamento">
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="complemento">Complemento</label>
-                  <input [(ngModel)]="endereco.complemento" name="{{endereco.complemento}}-{{endereco.id}}" type="text" class="form-control"
+                  <input [(ngModel)]="endereco.complemento" name="{{endereco.complemento}}-{{i}}" type="text" class="form-control"
                     id="rua" aria-describedby="Complemento" placeholder="Complemento">
                 </div>
               </div>
@@ -167,21 +167,21 @@
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="bairro">Bairro</label>
-                  <input [(ngModel)]="endereco.bairro" name="{{endereco.bairro}}-{{endereco.id}}" type="text" class="form-control" id="cep"
+                  <input [(ngModel)]="endereco.bairro" name="{{endereco.bairro}}-{{i}}" type="text" class="form-control" id="cep"
                     aria-describedby="bairro" placeholder="Bairro">
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="rua">Cidade</label>
-                  <input [(ngModel)]="endereco.cidade" name="{{endereco.cidade}}-{{endereco.id}}" type="text" class="form-control" id="cidade"
+                  <input [(ngModel)]="endereco.cidade" name="{{endereco.cidade}}-{{i}}" type="text" class="form-control" id="cidade"
                     aria-describedby="cidade" placeholder="Cidade">
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
                   <label for="uf">UF</label>
-                  <select [(ngModel)]="endereco.uf" name="{{endereco.uf}}-{{endereco.id}}" class="form-control" id="uf">
+                  <select [(ngModel)]="endereco.uf" name="{{endereco.uf}}-{{i}}" class="form-control" id="uf">
               <option>1</option>
               <option>2</option>
             </select>
@@ -193,7 +193,7 @@
               <div class="col-lg-12">
               <div class="form-group">
                 <label for="exampleTextarea">Ponto Refência</label>
-                <textarea  [(ngModel)]="endereco.pontoReferencia" name="{{endereco.pontoReferencia}}-{{endereco.id}}" class="form-control" rows="3"></textarea>
+                <textarea  [(ngModel)]="endereco.pontoReferencia" name="{{endereco.pontoReferencia}}-{{i}}" class="form-control" rows="3"></textarea>
               </div>
             </div>
             </div>

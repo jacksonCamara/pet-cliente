@@ -60,7 +60,7 @@ export class ClienteCadastroComponent implements OnInit {
   }
 
   adicionarTelefone() {
-    this.cliente.telefones.push({ numero: "", id: ++this.contFone })
+    this.cliente.telefones.push({ numero: "" })
     for (let t of this.cliente.telefones) {
       //  console.log(t)
     }
@@ -73,7 +73,6 @@ export class ClienteCadastroComponent implements OnInit {
 
   adicionarEndereco() {
     this.cliente.enderecos.push({
-      id: ++this.contEnd,
       rua: "",
       numeroResidencia: "",
       bloco: "",

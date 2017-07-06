@@ -8,10 +8,10 @@ export class Cliente {
     sexo: string = ""
     dataNascimento: String = ""
     telefones: Telefone[] = [{
-        numero: "", id: 0
+        numero: "", 
     }];
     enderecos: Endereco[] = [{
-        id: 0,
+
         rua: "",
        numeroResidencia: "",
         bloco: "",
