@@ -3,17 +3,17 @@ import { Endereco } from './endereco.model';
 
 export class Cliente {
     id: string;
-    nome: String;
-    cpf: string;
-    sexo: string;
-    dataNascimento: String;
+    nome: String = ""
+    cpf: string = ""
+    sexo: string = ""
+    dataNascimento: String = ""
     telefones: Telefone[] = [{
-        valor: "", id: 0
+        numero: "", id: 0
     }];
     enderecos: Endereco[] = [{
         id: 0,
         rua: "",
-        numero: "",
+       numeroResidencia: "",
         bloco: "",
         apartamento: "",
         complemento: "",

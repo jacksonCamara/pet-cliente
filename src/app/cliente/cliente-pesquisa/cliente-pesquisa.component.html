@@ -34,21 +34,13 @@
                 <td><input class="coluna-100" type="text" /></td>
                 <td><input class="coluna-100" type="text" /></td>
               </tr>
-              <tr class="tr-hover pointer">
-                <td scope="row">001</td>
-                <td>Bootstrap essencial - ME</td>
-                <td>00.000.000-23</td>
-                <td>00.000.000-23</td>
-                <td>00.000.000-23</td>
-                <td>00.000.000-23</td>
-              </tr>
-              <tr class="tr-hover pointer">
-                <td scope="row">001</td>
-                <td>Boosadf saf sfd a essencial - ME</td>
-                <td>00.000.000-23</td>
-                <td>00.000.000-23</td>
-                <td>00.000.000-23</td>
-                <td>00.000.000-23</td>
+              <tr *ngFor="let cliente of clientes"  class="tr-hover pointer">
+                <td scope="row">{{cliente.id}}</td>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.cpf}}</td>
+               <td>{{cliente.enderecos[0]?.bairro}}</td>
+                <td>{{cliente.telefones[0]?.numero}}</td>
+                <td>{{cliente.bairro}}</td>
               </tr>
             </tbody>
           </table>

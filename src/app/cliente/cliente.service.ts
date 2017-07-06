@@ -2,7 +2,7 @@ import { Cliente } from './cliente.model';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Http, Headers, Response } from '@angular/http';
-
+import 'rxjs/Rx';
 
 @Injectable()
 export class ClienteService {
@@ -21,12 +21,14 @@ export class ClienteService {
         if (cliente.id) {
             return this.http.put(this.url + '/' + cliente.id, JSON.stringify(cliente), { headers: this.headers });
         } else {
+            console.log("entrou no add cliente service")
             console.log(cliente);
             return this.http.post(this.url, JSON.stringify(cliente), { headers: this.headers });
         }
     }
 
     list(): Observable<Cliente[]> {
+        console.log('list no cliente service')
         return this.http.get(this.url).map(res => res.json());
     }
 

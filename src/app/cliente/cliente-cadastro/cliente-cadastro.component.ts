@@ -40,17 +40,16 @@ export class ClienteCadastroComponent implements OnInit {
   }
 
   public salvar(): void {
-    console.log(JSON.stringify(this.cliente))
-  //  event.preventDefault();
     this.clienteService
       .add(this.cliente)
       .subscribe(resposta => {
+        console.log(resposta)
         this.cliente = new Cliente();
       }, erro => console.log(erro));
   }
 
   adicionarTelefone() {
-    this.cliente.telefones.push({ valor: "", id: ++this.contFone })
+    this.cliente.telefones.push({ numero: "", id: ++this.contFone })
     for (let t of this.cliente.telefones) {
     //  console.log(t)
     }
@@ -65,7 +64,7 @@ export class ClienteCadastroComponent implements OnInit {
     this.cliente.enderecos.push({
       id: ++this.contEnd,
       rua: "",
-      numero: "",
+      numeroResidencia: "",
       bloco: "",
       apartamento: "",
       complemento: "",

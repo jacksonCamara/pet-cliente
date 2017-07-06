@@ -1,4 +1,4 @@
 export class Telefone {
-  valor: string;
+  numero: string;
   id: number;
 }
