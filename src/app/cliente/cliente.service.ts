@@ -28,7 +28,6 @@ export class ClienteService {
     }
 
     list(): Observable<Cliente[]> {
-        console.log('list no cliente service')
         return this.http.get(this.url).map(res => res.json());
     }
 

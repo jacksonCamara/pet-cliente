@@ -27,12 +27,12 @@
             <div class="form-group">
               <legend class="col-form-legend">Sexo</legend>
               <label  class="custom-control custom-radio">
-                <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                <input [(ngModel)]="cliente.sexo" value="Senhor" id="radio1" name="radio" type="radio" class="custom-control-input" [checked]="cliente.sexo == Senhor">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">Senhor</span>
               </label>
               <label class="custom-control custom-radio">
-                <input id="radio2" name="radio" type="radio" class="custom-control-input">
+                <input [(ngModel)]="cliente.sexo" value="Senhora" id="radio2" name="radio" type="radio" class="custom-control-input" [checked]="cliente.sexo == Senhora">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">Senhora</span>
               </label>
@@ -182,8 +182,7 @@
                 <div class="form-group">
                   <label for="uf">UF</label>
                   <select [(ngModel)]="endereco.uf" name="{{endereco.uf}}-{{i}}" class="form-control" id="uf">
-              <option>1</option>
-              <option>2</option>
+              <option *ngFor="let c of estados" [ngValue]="c">{{c}}</option>
             </select>
                 </div>
               </div>
@@ -210,9 +209,9 @@
         <div class="row">
           <div class="col-lg-12 margem-formulario">
             <div class="form-group">
-              <button type="submit" (click)="salvar()" class="btn btn-primary">{{botaoSalvarEditar}}}</button>
+              <button type="submit" [routerLink]="['/clientePesquisa']" (click)="salvar()" class="btn btn-primary">{{botaoSalvarEditar}}</button>
               <button type="submit" class="btn btn-secondary " data-toggle="modal" data-target="#modalDesabilitar">Desabilitar</button>
-              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalExcluir">Excluir</button>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalExcluir" >Excluir</button>
               <button type="submit" class="btn btn-secondary">Cancelar</button>
             </div>
           </div>
@@ -231,12 +230,11 @@
                   </button>
               </div>
               <div class="modal-body">
-                <p>Só é possível excluir a pelo se não houver nenhum pet com esta raça.</p>
-                <p>Caso tenha utilize o botão desabilitar</p>
+                <p>Tem certeza que deseja excluir?</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-primary">Confirmar</button>
+                <button (click)="remover()" type="submit" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/clientePesquisa']">Confirmar</button>
               </div>
             </div>
           </div>
@@ -248,7 +246,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Desabilitar?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
               </div>

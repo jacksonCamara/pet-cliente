@@ -23,6 +23,7 @@ export class ClientePesquisaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.list();
   }
 
 

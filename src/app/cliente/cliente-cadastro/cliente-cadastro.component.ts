@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./cliente-cadastro.component.css',]
 })
 export class ClienteCadastroComponent implements OnInit {
+  estados: string[] = ["SC", "RS", "SP"]
 
   meuForm: FormGroup;
   clienteService: ClienteService;
@@ -57,6 +58,19 @@ export class ClienteCadastroComponent implements OnInit {
           this.cliente = new Cliente();
         }, erro => console.log(erro));
     }
+    window.location.reload()
+    this.cliente = this.cliente;
+  }
+
+  public remover(): void{
+    this.clienteService
+    .remove(this.cliente._id)
+    .subscribe(resposta =>{
+      console.log(resposta)
+    }, erro => console.log(erro))
+    this.cliente = new Cliente();
+        window.location.reload()
+    this.cliente = this.cliente;
   }
 
   adicionarTelefone() {
@@ -94,5 +108,6 @@ export class ClienteCadastroComponent implements OnInit {
     //   console.log("removendo indice" + index);
     this.cliente.enderecos.splice(index, 1)
   }
+  
 }
 
