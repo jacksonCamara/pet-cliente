@@ -27,11 +27,10 @@ export class ClienteCadastroComponent implements OnInit {
     this.router = router;
     this.route.params.subscribe(params => {
       let id = params['id'];
-      console.log("valor do id")
-      console.log(id)
       if (id) {
         this.clienteService.findOne(id).subscribe(cliente => {
           this.cliente = cliente;
+          console.log(this.cliente)
         }, erro => console.log(erro));
       }
     });

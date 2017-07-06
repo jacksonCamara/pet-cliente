@@ -27,12 +27,10 @@ export class ClientePesquisaComponent implements OnInit {
 
 
   private list(): void {
-    console.log('list pesquisa')
     this.clienteService
       .list()
       .subscribe(clientes => {
         this.clientes = clientes;
-        console.log(this.clientes)
       }, erro => console.log(erro));
   }
 
