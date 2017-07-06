@@ -17,12 +17,9 @@
             <thead>
               <tr>
                 <th class="coluna-10"><span class="pointer">Codigo <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
-                <th class="coluna-30"><span class="pointer">Nome <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
-                <th class="coluna-15"><span class="pointer">CPF <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
-                <th class="coluna-15"><span class="pointer">Telefone <i class="fa fa-sort" aria-hidden="true"></i></span></th>
-                <th class="coluna-20"><span class="pointer">Pet <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
-                <th class="coluna-10"><span class="pointer">Bairro <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
-                
+                <th class="coluna-50"><span class="pointer">Nome <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
+                <th class="coluna-20"><span class="pointer">CPF <i class="fa fa-sort"  aria-hidden="true"></i></span></th>
+                <th class="coluna-20"><span class="pointer">Telefone <i class="fa fa-sort" aria-hidden="true"></i></span></th>               
               </tr>
             </thead>
             <tbody>
@@ -31,16 +28,12 @@
                 <td> <input class="coluna-100" type="text" /></td>
                 <td><input class="coluna-100" type="text" /></td>
                 <td><input class="coluna-100" type="text" /></td>
-                <td><input class="coluna-100" type="text" /></td>
-                <td><input class="coluna-100" type="text" /></td>
               </tr>
-              <tr *ngFor="let cliente of clientes"  class="tr-hover pointer">
-                <td scope="row">{{cliente.id}}</td>
+              <tr *ngFor="let cliente of clientes"  class="tr-hover pointer"  [routerLink]="['/clienteCadastro', cliente._id]" >
+                <td scope="row">{{cliente._id}}</td>
                 <td>{{cliente.nome}}</td>
                 <td>{{cliente.cpf}}</td>
-               <td>{{cliente.enderecos[0]?.bairro}}</td>
                 <td>{{cliente.telefones[0]?.numero}}</td>
-                <td>{{cliente.bairro}}</td>
               </tr>
             </tbody>
           </table>

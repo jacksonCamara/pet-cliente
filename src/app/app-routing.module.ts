@@ -20,6 +20,7 @@ import { UsuarioPesquisaComponent } from './usuario/usuario-pesquisa/usuario-pes
 
 const routes: Routes = [
   { path: 'clienteCadastro', component: ClienteCadastroComponent },
+  { path: 'clienteCadastro/:id', component: ClienteCadastroComponent },
   { path: 'clientePesquisa', component: ClientePesquisaComponent },
   { path: 'petCadastro', component: PetCadastroComponent },
   { path: 'petPesquisa', component: PetPesquisaComponent },
