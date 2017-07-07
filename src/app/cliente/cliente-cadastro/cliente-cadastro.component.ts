@@ -59,7 +59,7 @@ export class ClienteCadastroComponent implements OnInit {
         }, erro => console.log(erro));
     }
     window.location.reload()
-    this.cliente = this.cliente;
+    this.cliente = this.cliente
   }
 
   public remover(): void{
